@@ -5,7 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -19,12 +19,12 @@ public class Desempenho {
     private int qtdPerguntasErradas;
     private boolean aprovado;
 
-    @OneToOne
-    @JoinColumn(name = "empresa_id") 
+    @ManyToOne
+    @JoinColumn(name = "empresa_id")
     private Empresa empresa;
-    
-    @OneToOne
-    @JoinColumn(name = "formulario_id") 
+
+    @ManyToOne
+    @JoinColumn(name = "formulario_id")
     private Formulario formulario;
     
     public Desempenho() {
